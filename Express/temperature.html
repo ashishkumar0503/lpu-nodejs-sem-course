@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="far"></label>
+    <input type="number" placeholder="Enter Far" id="far" name="far" value="">
+    <button onclick="FarToCel()" >F to C</button>
+    <p id="show"></p>
+    <label for="cel"></label><br/>
+    <input type="number" placeholder="Enter Cel" id="cel" name="cel" value="">
+    <button onclick="CelToFar()" >C to F</button>
+    <p id="dis"></p>
+
+    <script>
+        let far = document.getElementById("far");
+        let cel = document.getElementById("cel");
+
+        function FarToCel() {
+            let myCel = ((parseFloat(far.value) - 32) * 5/9).toFixed(2);
+            document.getElementById("show").innerText = `Fahrenheit to Celsius is: ${myCel}`;
+        }
+        function CelToFar() {
+            let myFar = ((parseFloat(cel.value) *9) / 5 + 32).toFixed(2);
+            document.getElementById("dis").innerText = `Celsius to Fahrenheit is: ${myFar}`;
+        }
+    </script>
+
+    <!-- <form action="/convert" method="post">
+      <input id="eventInput" name="in" />
+
+      <button type="submit">convert</button>
+      <br />
+      <br />
+      <select name="give">
+        <optgroup>
+          <option name="c" value="0">C to F</option>
+          <option name="f" value="1">F to C</option>
+        </optgroup>
+      </select>
+      <p id="ans"></p>
+    </form> -->
+
+    <!-- <form method="post" action="/convert">
+      <input
+        type="number"
+        placeholder="Enter Far"
+        id="farh"
+        name="far"
+        value=""
+      />
+      <button type="submit" name="f" id="f">F to C</button><br/><br/>
+      <input
+        type="number"
+        placeholder="Enter Cel"
+        id="cels"
+        name="cel"
+        value=""
+      />
+      <button type="submit" name="c" id="c">C to F</button>
+    </form> -->
+  </body>
+</html>

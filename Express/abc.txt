@@ -1,0 +1,7 @@
+I'm file in Express Folder
+
+1. Create a nodejs application to display the implementation of events and timers, listeners
+2. Create a nodejs application that should open and read from a filename 
+"dmo.txt", if file is empty then it should print on console that "File is empty" otherwise content should be printed on the console
+3. Create a nodejs application which opens a file "demo.txt" and copies the content into anotehr file "copy.txt". Also delete the old file after copying
+4. Create a web server application with the http module 

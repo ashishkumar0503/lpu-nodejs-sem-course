@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="number" placeholder="Enter a number" value="" id="num" name="checkPrime">
+    <button onclick=checkPrime() >Check Prime</button>
+    <p id="show"></p>
+
+    <script>
+        let num = document.getElementById('num');
+
+        function checkPrime() {
+            const num = req.body.num;
+            var flag = true;
+            for (let i = 2; i <= num-1; i++) {
+                if (num % i === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag === true) {
+                res.send(`${num} is prime`)
+            } else {
+                res.send(`${num} is not prime`);
+            }
+        }
+    </script> -->
+    <form action="/check" method="post">
+      <input type="number" placeholder="Enter a number" name="num" value="">
+      <button>Check Prime</button>
+    </form>
+  </body>
+</html>
