@@ -39,7 +39,6 @@ app.post('/set', (req, res) => {
     // res.cookie('first_name', cookieFirst);
     // res.cookie('last_name', cookieLast);
     res.send('Set Successfully');
-    
 });
 
 app.post('/get', (req, res) => {
