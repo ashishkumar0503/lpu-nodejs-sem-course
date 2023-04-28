@@ -15,7 +15,7 @@ const server = http.createServer((req, res)=>{
         res.end();
     }
     if(req.url == '/support'){
-        res.write(`<html><body>This is the support page<br/><br/><input type="text" placeholder="Hi, how can I help you!"/><br/><br/><a href='/'>Back</a></body></html>`);
+        res.write(`<html><body>This is the support page<br/><br/><input type="text" placeholder="Hi, how can I help you!cl"/><br/><br/><a href='/'>Back</a></body></html>`);
         res.end();
     }
 });
