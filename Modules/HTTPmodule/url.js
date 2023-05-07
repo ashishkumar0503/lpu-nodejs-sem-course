@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
     res.end("Hello, I'm a response in a web server");
 });
 
-server.listen(1000, () => {
-    console.log("Listening to port number 1000");
+server.listen(8000, () => {
+    console.log("Listening to port number 8000");
 });
 
