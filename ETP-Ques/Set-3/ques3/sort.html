@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sort values</title>
+  </head>
+  <body>
+    <h1>Sort values</h1>
+    <form action="/sort" method="get">
+      <label for="values">Enter comma-separated values:</label>
+      <input type="text" id="values" name="values" required>
+      <button type="submit">Sort</button>
+    </form>
+    <div id="result"></div>
+    <script>
+      const form = document.querySelector('form');
+      const resultDiv = document.getElementById('result');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const values = formData.get('values');
+        try {
+          const response = await fetch(`/sort?values=${values}`);
+          const sortedValues = await response.text();
+          resultDiv.textContent = `Sorted values: ${sortedValues}`;
+        } catch (error) {
+          resultDiv.textContent = `Error: ${error.message}`;
+        }
+      });
+    </script>
+  </body>
+</html>

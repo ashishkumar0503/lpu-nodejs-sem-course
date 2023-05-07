@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="number" value="" id="num" placeholder="Enter a number">
+        <button onclick="checkPrime()">Check Prime</button>
+        <p id="demo"></p>
+
+    <script>
+        let number = document.getElementById('num');
+        function checkPrime() {
+            let myNum = parseInt(number.value);
+            let flag = true;
+            if (myNum < 2) {
+                return;
+            }
+            for (let index = 2; index <= Math.sqrt(myNum); index++) {
+                if (myNum % index === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                document.getElementById('demo').innerText = myNum + ' is prime';
+            } else {
+                document.getElementById('demo').innerText = myNum + ' is not prime';
+            }
+        }
+    </script>
+</body>
+</html>

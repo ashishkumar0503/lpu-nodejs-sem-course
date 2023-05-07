@@ -10,10 +10,43 @@
 <body>
     <p>Hello World</p>
     <script>
+        // var socket = io();
+        // socket.on('message', (data) => {
+        //     document.write(data);
+        // })
+
+        // custom event created on server side and catch on client side
+        // socket.on('myCustomEvent', (data) => {
+        //     document.write(data.desc);
+        // });
+
+        // custom event created on client side and catch on server side
+        // socket.emit('myCustomEventFromClientSide', 'A custom message from client side');
+
+        // Broadcast
+        // socket.on('broadcast', (data) => {
+        //     document.body.innerHTML = '';
+        //     document.write(data.message);
+        // });
+
+        // custom broadcast
+        // socket.on('newUserConnect', (data) => {
+        //     document.body.innerHTML = '';
+        //     document.write(data.message);
+        // });
+
+        // namespaces
+        // var socket = io('/custom-namespace');
+        // socket.on('customEvent', (data) => {
+        //     document.body.innerHTML = '';
+        //     document.write(data);
+        // })
+
         var socket = io();
-        socket.on('message', (data) => {
+        socket.on('connectedRoom', (data) => {
+            document.body.innerHTML = '';
             document.write(data);
-        })
+        });
     </script>
 </body>
 </html>

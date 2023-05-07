@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <p>Student Details</p>
+    <form id="form">
+        <input type="text" id="name" name="name" value="" placeholder="Enter name"><br><br>
+        <input type="number" id="reg-no" name="reg-no" value="" placeholder="Enter reg no"><br><br>
+        <button id="sub">Submit</button>
+    </form>
+    <h1>Visitor Count</h1>
+    <p id="demo"></p>
+    <script>
+        var socket = io();
+        let form = document.getElementById('form');
+        var btn = document.getElementById('sub');
+        btn.addEventListener('click', (event) => {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let reg = document.getElementById('reg-no').value;
+            
+            socket.emit('studentDetails', {
+                name: name,
+                regNo: reg
+            });
+            form.reset();
+        });
+        socket.on('oddVisitorCount', (visitorCount) => {
+            const count = document.getElementById('demo');
+            count.textContent = `Odd visitor count: ${visitorCount}`;
+        });
+    </script>
+</body>
+</html>
