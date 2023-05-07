@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-        <input type="number" value="" id="num" placeholder="Enter a number">
-        <button onclick="checkPrime()">Check Prime</button>
+    <form action="/check" method="POST">
+        <input type="number" value="" id="num" name="num" placeholder="Enter a number">
+        <button type="submit">Check Prime</button>
         <p id="demo"></p>
-
-    <script>
+    </form>
+    <!-- <script>
         let number = document.getElementById('num');
         function checkPrime() {
             let myNum = parseInt(number.value);
@@ -31,6 +32,6 @@
                 document.getElementById('demo').innerText = myNum + ' is not prime';
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>

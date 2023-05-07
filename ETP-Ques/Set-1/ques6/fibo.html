@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="number" value="" id="num" placeholder="Enter a number">
-    <button onclick="findFibo()">Find nth fibonacci</button>
-    <p id="demo"></p>
-
-    <script>
-        let number = document.getElementById('num');
-        function findFibo() {
-            let num = parseInt(number.value);
-            const fibo = (num) => {
-                if (num <= 1) {
-                    return num;
-                }
-                return fibo(num - 1) + fibo(num - 2);
-            }
-            const res = fibo(num);
-            document.getElementById('demo').innerText = `The ${num}th Fibonacci number is ${res}`;
-        }
-    </script>
-</body>
+  </head>
+  <body>
+    <form action="/fibonacci" method="POST">
+      <input type="number" value="" id="num" name="num" placeholder="Enter a number" />
+      <button type="submit">Find nth fibonacci</button>
+      <p id="demo"></p>
+    </form>
+    <!-- <script>
+      let number = document.getElementById("num");
+      function findFibo() {
+        let num = parseInt(number.value);
+        const fibo = (num) => {
+          if (num <= 1) {
+            return num;
+          }
+          return fibo(num - 1) + fibo(num - 2);
+        };
+        const res = fibo(num);
+        document.getElementById(
+          "demo"
+        ).innerText = `The ${num}th Fibonacci number is ${res}`;
+      }
+    </script> -->
+  </body>
 </html>
