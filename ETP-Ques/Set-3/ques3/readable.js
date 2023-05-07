@@ -1,3 +1,8 @@
+// Q3 a) Implement a Node.js application to create a readable stream with an employee.txt file 
+// (add basic employee details in the file). 
+// Read the student details from the above stream and send the data 
+// as a response to the client request from the browser. 
+
 const fs = require('fs');
 const http = require('http');
 const server = http.createServer();

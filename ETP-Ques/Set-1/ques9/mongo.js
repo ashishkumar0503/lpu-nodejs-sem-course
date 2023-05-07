@@ -1,3 +1,8 @@
+// Implement a Node.js application to connect with the MongoDB for performing the below operations 
+// a) Create a database and add Student collection with the fields- Sid, Name, Subject, Branch, and Marks
+// b) Add multiple documents with student data 
+// c) Sort (in ascending order) the student details with marks and display them in the console window.
+
 const mongoose = require('mongoose');
 
 // db creation

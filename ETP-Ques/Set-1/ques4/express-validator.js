@@ -1,3 +1,9 @@
+// Create an express application with the following requirements 
+// a) Accept Student Name, Reg. no., Roll. No., Mobile No. and Mail Id from the input text fields of a 
+// client page and perform a chain of validations on the data using the express-validator module in the server application. 
+// b) Check all the fields are not empty, minimum and maximum lengths of data. 
+// C) Add a submit button on the client web page to submit the data and display the warning messages if required.
+
 const express = require("express");
 const { body, validationResult } = require("express-validator");
 

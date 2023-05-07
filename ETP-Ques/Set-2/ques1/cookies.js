@@ -1,3 +1,9 @@
+// insert two text boxes - first name and last name. Insert three buttons and name them as 
+// "set cookie", "get cookie" and "delete cookie". when the users inputs the values in the 
+// two given text boxes, then with the click of set cookie button user can set cookies. 
+// With the click on the get cookie button user should be able to fetch the cookie that has been set. 
+// With th e click of delete cookie user should be able to delete the cookie.
+
 var express = require('express');
 var app = express();
 

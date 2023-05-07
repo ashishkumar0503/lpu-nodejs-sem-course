@@ -2,7 +2,7 @@
 // 1. Create a text file and add student information (Reg. No, Name, Grade) 
 // in the server system.
 // 2. Accept a filename from the input text of a user web page and transfer 
-// the request file using sendFile() function from the server as a response to the 
+// the request file using download() function from the server as a response to the 
 // button click event from the user web page.
 
 const fs = require('fs');

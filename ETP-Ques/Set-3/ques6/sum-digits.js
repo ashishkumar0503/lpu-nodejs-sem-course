@@ -1,3 +1,8 @@
+// b) Create a node js web server application with the HTTP module 
+// for computing the sum of digits of a given number. 
+// Accept a number from an input text field of the client page and provide 
+// the output value as a response with the click event on a button.
+
 const fs = require('fs');
 const http = require('http');
 

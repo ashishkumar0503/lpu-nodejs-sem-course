@@ -1,3 +1,8 @@
+// Q4 a) Implement a Node.js application to connect with MongoDB to Create a 
+// database and add car collection with the fields- Model, Company, Mileage, colour, and Owner. 
+// Add multiple documents with Employee data. Finally, Query the above collection to find employees 
+// with more than a specific salary and display it in the console window. 
+
 const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://127.0.0.1:27017/car")

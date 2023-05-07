@@ -1,46 +1,39 @@
-const express = require('express');
-const http = require('http');
-const socketio = require('socket.io');
+// a) Implement a client-server application with the express, HTTP, and socket.io 
+// modules to display the student (yóur) details in the server console after getting 
+// a request (connection) from a client. Then Broadcast the only odd visitor count from 
+// the server to all clients with the new client connections.
 
-const app = express();
-const server = http.createServer(app);
-const io = socketio(server);
+const app = require('express')();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+
+app.get('/', (req, res) => {
+    res.sendFile(`${__dirname}/student.html`);
+});
 
 let visitorCount = 0;
 
-app.get('/', (req, res) => {
-    res.sendFile(`${__dirname}/student.html`)
+io.on('connection', (socket) => {
+    visitorCount++;
+    console.log(`${visitorCount} user connected...`);
+    if (visitorCount % 2 !== 0) {
+        socket.emit('oddVisitorCount', visitorCount);
+    }
+
+    socket.on('studentDetails', (data) => {
+        console.log('Student name is: ' + data.name);
+        console.log('Student reg no is: ' + data.regNo);
+    })
+
+    socket.on('disconnect', () => {
+        visitorCount--;
+        console.log(`${visitorCount}th user disconnected`);
+        if (visitorCount % 2 !== 0) {
+            socket.emit('oddVisitorCount', visitorCount);
+        }
+    })
 })
 
-// Handle socket.io connections
-io.on('connection', (socket) => {
-  visitorCount++;
-  console.log(`New visitor connected. Total visitor count: ${visitorCount}`);
-
-  // Send student details to the server console on request
-  socket.on('getStudentDetails', (student) => {
-    console.log(`Received student details: ${JSON.stringify(student)}`);
-  });
-  
-
-  // Broadcast odd visitor count to all clients
-  if (visitorCount % 2 === 1) {
-    io.emit('oddVisitorCount', visitorCount);
-  }
-
-  // Disconnect event
-  socket.on('disconnect', () => {
-    visitorCount--;
-    console.log(`Visitor disconnected. Total visitor count: ${visitorCount}`);
-
-    // Broadcast odd visitor count to all clients
-    if (visitorCount % 2 === 1) {
-      io.emit('oddVisitorCount', visitorCount);
-    }
-  });
-});
-
-// Start the server
-server.listen(8000, () => {
-  console.log(`Server listening on port 8000`);
+http.listen(8000, () => {
+    console.log('Listening to port 8000');
 });

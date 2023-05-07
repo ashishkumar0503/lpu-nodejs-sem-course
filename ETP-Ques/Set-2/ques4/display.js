@@ -1,3 +1,7 @@
+// B)Create a form having text boxes and a submit button. 
+// On the click of the submit button, the values entered in the form should be printed on the web page. 
+// Use HTTP module for this task.
+
 const http = require('http');
 const qs = require('querystring');
 

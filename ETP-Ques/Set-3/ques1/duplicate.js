@@ -1,3 +1,9 @@
+// Q1 a) Include the http module to create a server application and use the fs module 
+// to duplicate the original.txt file as the duplicate.txt file in the server with 
+// the client(user) request from the browser. 
+// Create a source.txt file and add personal information 
+// (name, city, state) in the server system for duplication.
+
 const http = require('http');
 const fs = require('fs');
 

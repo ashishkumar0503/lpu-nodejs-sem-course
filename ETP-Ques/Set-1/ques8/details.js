@@ -1,3 +1,8 @@
+// Implement TCP Socket client and server applications with the following criteria. 
+// a) Connect and send your details to the server from the client application 
+// b) Display the student details in the server terminal after getting a request (connection) from a client terminal 
+// c) Send a "Thank you" message to the client terminal.
+
 const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);

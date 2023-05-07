@@ -1,3 +1,8 @@
+// Implement an express application for the following 
+// a) Accept a number from the input text field of a user web page and perform the basic arithmetic operations, 
+// increment (++), decrement (--), and square, on the number inside a middleware function of server nodejs application
+// b) Display the output value as a reponse to the button click event from the user page
+
 const express = require('express');
 const app = express();
 

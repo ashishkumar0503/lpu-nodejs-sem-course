@@ -1,3 +1,8 @@
+// B)Create a form having text boxes and a submit button. 
+// On the click of the submit button, the values entered in the form should be stored in an excel file. 
+// Use Express module for this task.
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const XLSX = require('xlsx');

@@ -1,3 +1,8 @@
+// Q6 a) Implement a client-server application with the express, HTTP, and socket.io 
+// modules to display the student (yóur) details in the server console after getting 
+// a request (connection) from a client. Then Broadcast the only odd visitor count from 
+// the server to all clients with the new client connections.
+
 const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);

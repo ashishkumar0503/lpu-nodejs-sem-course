@@ -1,3 +1,8 @@
+// b) Create a node.js web server application with the HTTP module to find 
+// a series of factorial numbers up to a given number. 
+// Accept a number from the input text field of the client page and provide 
+// the output values as a response with the click event on a button.
+
 const http = require('http');
 const server = http.createServer();
 const fs = require('fs');
